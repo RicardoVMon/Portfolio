@@ -1,14 +1,27 @@
 'use client';
 import { motion } from 'framer-motion';
 import { useParams } from 'next/navigation';
+import { useMemo } from 'react';
 import projects from '@/app/data/projects';
 import Link from 'next/link';
 import Carousel from '@/app/components/Carousel';
 
 export default function ProjectPage() {
-  
   const { id } = useParams();
   const project = projects.find((p) => p.id === id);
+
+  // Memoize animation variants to prevent recreation
+  const fadeInUp = useMemo(() => ({
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6 }
+  }), []);
+
+  const techVariants = useMemo(() => ({
+    initial: { opacity: 0, scale: 0.8 },
+    animate: { opacity: 1, scale: 1 },
+    whileHover: { scale: 1.05 }
+  }), []);
 
   if (!project) {
     return (
@@ -25,7 +38,10 @@ export default function ProjectPage() {
     );
   }
 
-  const images = project.images.length > 1 ? project.images : [project.images[0]];
+  const images = useMemo(() => 
+    project.images.length > 1 ? project.images : [project.images[0]], 
+    [project.images]
+  );
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-white to-blue-50">
@@ -51,30 +67,26 @@ export default function ProjectPage() {
 
         {/* Project Header */}
         <header className="text-center mb-12">
-            <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+          <motion.h1
+            {...fadeInUp}
             className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-800 leading-tight"
-            >
+          >
             {project.title}
-            </motion.h1>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
-              >
-              {project.long_description}
-            </motion.div>
+          </motion.h1>
+          <motion.div
+            {...fadeInUp}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
+          >
+            {project.long_description}
+          </motion.div>
         </header>
 
         {/* Technologies Section */}
         <section className="mb-16">
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            {...fadeInUp}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="text-2xl md:text-3xl font-semibold mb-8 text-gray-700 text-center"
           >
             Technologies Used
@@ -82,14 +94,12 @@ export default function ProjectPage() {
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 max-w-5xl mx-auto">
             {project.technologies.map((technology, index) => (
-                <motion.div
+              <motion.div
                 key={technology}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                whileHover={{ scale: 1.05 }}
+                {...techVariants}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
                 className="bg-white rounded-lg p-4 flex flex-col items-center hover:bg-gray-50 transition-all duration-200 shadow-sm hover:shadow-md"
-                >
+              >
                 <span className="text-sm font-medium text-gray-800 text-center">
                   {technology}
                 </span>

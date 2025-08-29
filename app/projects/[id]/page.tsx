@@ -23,11 +23,18 @@ export default function ProjectPage() {
     whileHover: { scale: 1.05 }
   }), []);
 
+  const images = useMemo(() => {
+    if (!project) return [];
+    return project.images.length > 1 ? project.images : [project.images[0]];
+  }, [project]);
+
   if (!project) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center">
         <h1 className="text-2xl font-bold text-gray-800 mb-4">Project Not Found</h1>
-        <p className="text-gray-600 mb-8">The project you're looking for doesn't exist.</p>
+        <p className="text-gray-600 mb-8">
+          The project you&apos;re looking for doesn&apos;t exist.
+        </p>
         <Link 
           href="/" 
           className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
@@ -38,10 +45,6 @@ export default function ProjectPage() {
     );
   }
 
-  const images = useMemo(() => 
-    project.images.length > 1 ? project.images : [project.images[0]], 
-    [project.images]
-  );
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-white to-blue-50">

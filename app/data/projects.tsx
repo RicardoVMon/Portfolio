@@ -1,14 +1,14 @@
 const projects = [
   {
-    id: 'healthcare-management',
-    title: 'Healthcare Management System For Physical Therapy Clinic',
-    description: 'Responsive web app built with HTML, CSS, JS, and Bootstrap. Focused on UI/UX for easier navigation and usability.',
-    long_description: 'This project involved creating a responsive web application for managing healthcare services. The app was built using HTML, CSS, JavaScript, and Bootstrap to ensure a user-friendly interface and seamless navigation across devices.',
-    images: ['/projects/Healthcare/Dashboard.gif', '/projects/Healthcare/Patient.gif', '/projects/Healthcare/Form.gif', '/projects/Healthcare/Table.gif'],
-    thumbnail: '/projects/healthcare.jpg',
-    github: 'https://github.com/yourusername/healthcare-management',
-    link: 'https://your-demo-link.com/healthcare-management',
-    technologies: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', '.NET Framework', 'SQL Server', 'Azure Cloud'],
+    id: 'costa-rica-crime-analytics',
+    title: 'Costa Rica Crime Analytics',
+    description: 'Real-time crime data pipeline using Databricks Lakeflow Declarative Pipelines with Medallion Architecture for public safety insights.',
+    long_description: 'A comprehensive data engineering solution built on Databricks that ingests, processes, and analyzes crime data from Costa Rica\'s OIJ. The platform implements a Medallion Architecture (Bronze-Silver-Gold) using Lakeflow Declarative Pipelines and Delta Live Tables for real-time streaming transformations. Features include automated data quality controls, materialized views for optimized analytics, and interactive dashboards showcasing time series forecasting, geographic crime distribution across provinces, and detailed modus operandi patterns to support data-driven public safety decisions.',
+    images: ['/projects/OIJ/Pipeline.png', '/projects/OIJ/Dashboard 1.png', '/projects/OIJ/Pipeline.png', '/projects/OIJ/Dashboard 2.png'],
+    thumbnail: '/projects/OIJ/thumbnail.jpg',
+    github: 'https://github.com/RicardoVMon/oij-data-pipeline-dlp',
+    link: 'https://your-databricks-workspace.com/crime-analytics-dashboard',
+    technologies: ['Databricks', 'LDPs', 'SQL', 'Autoloader', 'PySpark'],
   },
   {
     id: 'data-analysis-ai',
@@ -22,6 +22,17 @@ const projects = [
     technologies: ['Python', 'Streamlit', 'Pandas', 'NumPy', 'Scikit-learn', 'Gemini'],
   },
   {
+    id: 'healthcare-management',
+    title: 'Healthcare Management System For Physical Therapy Clinic',
+    description: 'Responsive web app built with HTML, CSS, JS, and Bootstrap. Focused on UI/UX for easier navigation and usability.',
+    long_description: 'This project involved creating a responsive web application for managing healthcare services. The app was built using HTML, CSS, JavaScript, and Bootstrap to ensure a user-friendly interface and seamless navigation across devices.',
+    images: ['/projects/Healthcare/Dashboard.gif', '/projects/Healthcare/Patient.gif', '/projects/Healthcare/Form.gif', '/projects/Healthcare/Table.gif'],
+    thumbnail: '/projects/healthcare.jpg',
+    github: 'https://github.com/yourusername/healthcare-management',
+    link: 'https://your-demo-link.com/healthcare-management',
+    technologies: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', '.NET Framework', 'SQL Server', 'Azure Cloud'],
+  },
+  {
     id: 'school-it-inventory',
     title: 'School IT Inventory',
     description: 'Inventory system for managing school IT equipment, built with Java and Spring Boot for accurate tracking and reporting.',
@@ -32,7 +43,7 @@ const projects = [
     link: 'https://your-demo-link.com/school-it-inventory',
     technologies: ['Java', 'Spring Boot', 'MySQL', 'Thymeleaf', 'Azure Cloud'],
   },
-  {
+  /* {
     id: 'social-media-district-safety',
     title: 'Social Media for District Safety',
     description: 'Community platform built with HTML, CSS, and JS to improve safety in Costa Rican districts, inspired by Reddit.',
@@ -41,7 +52,7 @@ const projects = [
     github: 'https://github.com/yourusername/district-safety-social-media',
     link: 'https://your-demo-link.com/district-safety-social-media',
     technologies: ['HTML', 'CSS', 'JavaScript', 'React', 'Node.js', 'Express', 'MongoDB'],
-  },
+  }, */
 ];
 
 export default projects;

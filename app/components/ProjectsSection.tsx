@@ -6,7 +6,6 @@ import projects from '@/app/data/projects';
 import { useMemo } from 'react';
 
 export default function ProjectsSection() {
-    // Memoize animations to prevent recreation on every render
     const containerVariants = useMemo(() => ({
         hidden: { opacity: 0 },
         visible: {
@@ -69,27 +68,27 @@ export default function ProjectsSection() {
                             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/90 group-hover:to-black/95 transition-colors duration-300" />
                             
                             {/* Technology badges - simplified animation */}
-                            <div className="absolute top-4 right-4 flex flex-wrap gap-2 max-w-[50%]">
+                            <div
+                                className="absolute top-4 right-4 hidden md:flex flex-wrap gap-2 max-w-[50%] z-10"
+                                aria-hidden="true"
+                            >
                                 {project.technologies.slice(0, 4).map((tech, techIndex) => (
-                                    <div
+                                    <span
                                         key={tech}
-                                        className="bg-white/90 backdrop-blur-sm text-gray-800 px-2 py-1 rounded-full text-xs font-medium shadow-lg whitespace-nowrap opacity-0 animate-[fadeInScale_0.3s_ease-out_forwards]"
-                                        style={{ 
-                                            animationDelay: `${techIndex * 50}ms` 
-                                        }}
+                                        className="bg-white/90 backdrop-blur-sm text-gray-800 px-2 py-1 rounded-full text-xs font-medium shadow-lg whitespace-nowrap opacity-0 motion-safe:animate-[fadeInScale_0.3s_ease-out_forwards] motion-reduce:opacity-100 motion-reduce:transform-none"
+                                        style={{ animationDelay: `${techIndex * 50}ms` }}
                                     >
                                         {tech}
-                                    </div>
+                                    </span>
                                 ))}
+
                                 {project.technologies.length > 4 && (
-                                    <div
-                                        className="bg-white/90 backdrop-blur-sm text-gray-800 px-2 py-1 rounded-full text-xs font-medium shadow-lg opacity-0 animate-[fadeInScale_0.3s_ease-out_forwards]"
-                                        style={{ 
-                                            animationDelay: `${4 * 50}ms` 
-                                        }}
+                                    <span
+                                        className="bg-white/90 backdrop-blur-sm text-gray-800 px-2 py-1 rounded-full text-xs font-medium shadow-lg opacity-0 motion-safe:animate-[fadeInScale_0.3s_ease-out_forwards] motion-reduce:opacity-100 motion-reduce:transform-none"
+                                        style={{ animationDelay: `${4 * 50}ms` }}
                                     >
                                         +{project.technologies.length - 4}
-                                    </div>
+                                    </span>
                                 )}
                             </div>
 

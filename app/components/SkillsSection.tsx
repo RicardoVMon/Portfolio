@@ -4,14 +4,14 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 const skills = [
-  { name: 'React', logo: '/logos/react.svg' },
-  { name: 'JavaScript (ES6+)', logo: '/logos/javascript.svg' },
-  { name: 'HTML5', logo: '/logos/html5.svg' },
-  { name: 'CSS3', logo: '/logos/css3.svg' },
-  { name: 'Responsive Web Design', logo: '/logos/responsive.svg' },
-  { name: 'npm', logo: '/logos/npm.svg' },
+  { name: 'Databricks', logo: '/logos/databricks.svg' },
+  { name: 'SQL', logo: '/logos/sql.svg' },
+  { name: 'LD Pipelines', logo: '/logos/ldp.svg' },
+  { name: 'Spark', logo: '/logos/pyspark.svg' },
   { name: 'Python', logo: '/logos/python.svg' },
-  { name: 'Java', logo: '/logos/java.svg' }
+  { name: 'Power BI', logo: '/logos/powerbi.svg' },
+  { name: 'Azure', logo: '/logos/azure.svg' },
+  { name: 'Pandas', logo: '/logos/pandas.svg' }
 ];
 
 export default function SkillsSection() {

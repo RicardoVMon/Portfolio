@@ -32,7 +32,7 @@ export default function HeroSection() {
 					className="text-lg md:text-xl text-gray-600 mb-8 px-4"
 				>
 					<Typewriter
-						words={["Full Stack Developer", "Data Enthusiast", "Tech Explorer"]}
+						words={["Data Enthusiast", "Problem Solver", "Analytics Driven"]}
 						loop={0}
 						cursor
 						cursorStyle='|'

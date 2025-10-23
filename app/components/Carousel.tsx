@@ -91,7 +91,7 @@ export default function ProjectCarousel({
             type="button"
           >
             <svg
-              className="w-8 h-8 text-white drop-shadow group-hover:scale-110 transition-transform"
+              className="w-8 h-8 text-black drop-shadow group-hover:scale-110 transition-transform"
               fill="none"
               stroke="currentColor"
               strokeWidth={2.5}
@@ -107,7 +107,7 @@ export default function ProjectCarousel({
             type="button"
           >
             <svg
-              className="w-8 h-8 text-white drop-shadow group-hover:scale-110 transition-transform"
+              className="w-8 h-8 text-black drop-shadow group-hover:scale-110 transition-transform"
               fill="none"
               stroke="currentColor"
               strokeWidth={2.5}
@@ -122,7 +122,7 @@ export default function ProjectCarousel({
                 key={i}
                 onClick={() => goToSlide(i)}
                 className={`w-2 h-2 rounded-full transition-colors ${
-                  i === current ? 'bg-white' : 'bg-gray-400'
+                  i === current ? 'bg-black' : 'bg-gray-400'
                 }`}
                 aria-label={`Go to slide ${i + 1}`}
               />

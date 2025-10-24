@@ -23,6 +23,12 @@ export default function ProjectPage() {
     whileHover: { scale: 1.05 }
   }), []);
 
+  const benefitVariants = useMemo(() => ({
+    initial: { opacity: 0, x: -20 },
+    animate: { opacity: 1, x: 0 },
+    whileHover: { scale: 1.02 }
+  }), []);
+
   const images = useMemo(() => {
     if (!project) return [];
     return project.images.length > 1 ? project.images : [project.images[0]];
@@ -44,7 +50,6 @@ export default function ProjectPage() {
       </div>
     );
   }
-
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-white to-blue-50">
@@ -115,6 +120,49 @@ export default function ProjectPage() {
         <section>
           <Carousel images={images} alt={project.title} />
         </section>
+
+        {/* Benefits Section - Same width as Carousel */}
+        {project.benefits && project.benefits.length > 0 && (
+          <section className="mb-16">
+            <motion.h2
+              {...fadeInUp}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-2xl md:text-3xl font-semibold mb-8 text-gray-700 text-center"
+            >
+              Business Value Delivered
+            </motion.h2>
+            
+            <div className="w-full space-y-4">
+              {project.benefits.map((benefit, index) => (
+                <motion.div
+                  key={index}
+                  {...benefitVariants}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-200 border-l-4 border-gray-500"
+                >
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center mt-0.5">
+                      <svg
+                        className="w-3 h-3 text-blue-600"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <p className="text-gray-700 leading-relaxed">
+                      {benefit}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </section>
+        )}
       </div>
     </main>
   );

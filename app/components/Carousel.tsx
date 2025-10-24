@@ -91,7 +91,7 @@ export default function ProjectCarousel({
             type="button"
           >
             <svg
-              className="w-8 h-8 text-black drop-shadow group-hover:scale-110 transition-transform"
+              className="w-8 h-8 text-white drop-shadow group-hover:scale-110 transition-transform"
               fill="none"
               stroke="currentColor"
               strokeWidth={2.5}
@@ -107,7 +107,7 @@ export default function ProjectCarousel({
             type="button"
           >
             <svg
-              className="w-8 h-8 text-black drop-shadow group-hover:scale-110 transition-transform"
+              className="w-8 h-8 text-white drop-shadow group-hover:scale-110 transition-transform"
               fill="none"
               stroke="currentColor"
               strokeWidth={2.5}

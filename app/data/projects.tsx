@@ -4,11 +4,18 @@ const projects = [
     title: 'Costa Rica Crime Analytics',
     description: 'Real-time crime data pipeline using Databricks Lakeflow Declarative Pipelines with Medallion Architecture for public safety insights.',
     long_description: 'A comprehensive data engineering solution built on Databricks that ingests, processes, and analyzes crime data from Costa Rica\'s OIJ. The platform implements a Medallion Architecture (Bronze-Silver-Gold) using Lakeflow Declarative Pipelines and Delta Live Tables for real-time streaming transformations. Features include automated data quality controls, materialized views for optimized analytics, and interactive dashboards showcasing time series forecasting, geographic crime distribution across provinces, and detailed modus operandi patterns to support data-driven public safety decisions.',
-    images: ['/projects/OIJ/Pipeline.png', '/projects/OIJ/Dashboard 1.png', '/projects/OIJ/Pipeline.png', '/projects/OIJ/Dashboard 2.png'],
+    images: ['/projects/OIJ/Pipeline.png', '/projects/OIJ/Dashboard 1.png', '/projects/OIJ/Dashboard 2.png'],
     thumbnail: '/projects/OIJ/thumbnail.jpg',
     github: 'https://github.com/RicardoVMon/oij-data-pipeline-dlp',
     link: 'https://your-databricks-workspace.com/crime-analytics-dashboard',
     technologies: ['Databricks', 'LDPs', 'SQL', 'Autoloader', 'PySpark'],
+    benefits: [
+      'Real-time crime pattern detection enabling faster emergency response',
+      'Geographic insights supporting optimal police resource deployment',
+      'Predictive analytics driving evidence-based public safety policies',
+      'Automated data quality controls ensuring reliable decision-making',
+      'Scalable streaming architecture supporting continuous data ingestion',
+    ]
   },
   {
     id: 'data-analysis-ai',
@@ -20,6 +27,13 @@ const projects = [
     github: 'https://github.com/yourusername/data-analysis-ai',
     link: 'https://your-demo-link.com/data-analysis-ai',
     technologies: ['Python', 'Streamlit', 'Pandas', 'NumPy', 'Scikit-learn', 'Gemini'],
+    benefits: [
+      'Automated data exploration accelerating business intelligence workflows',
+      'AI-driven insights reducing manual analysis time and human error',
+      'Interactive dashboards enabling real-time decision-making for stakeholders',
+      'Seamless data cleaning ensuring higher accuracy and consistency in reports',
+      'Scalable architecture supporting diverse datasets and analytical use cases',
+    ]
   },
   {
     id: 'healthcare-management',
@@ -31,6 +45,13 @@ const projects = [
     github: 'https://github.com/yourusername/healthcare-management',
     link: 'https://your-demo-link.com/healthcare-management',
     technologies: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', '.NET Framework', 'SQL Server', 'Azure Cloud'],
+    benefits: [
+      'Centralized clinical data management improving operational efficiency',
+      'Automated workflows reducing administrative workload and record retrieval time',
+      'Secure cloud-based storage ensuring compliance and data integrity',
+      'Integrated reporting enabling data-driven financial and clinical decisions',
+      'Responsive design enhancing user experience across devices and roles',
+    ]
   },
   {
     id: 'school-it-inventory',
